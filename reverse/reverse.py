@@ -67,21 +67,18 @@ class LinkedList:
         self.head = prev
 
 #--------------recursive reverse function-----------------------------
+#Time Complexity: O(n)
+#Space Complexity: O(n)
     def reverse_list_recurcive(self, node, prev): 
         if self.head is None: 
             return   
-        # If last node mark it head 
         if node.next_node is None : 
             self.head = node  
               
-            # Update next to prev node 
             node.next_node = prev 
             return 
           
-        # Save curr.next node for recursive call 
         next = node.next_node
-  
-        # And update next  
         node.next_node = prev 
       
         self.reverse_list_recurcive(next, node)  
